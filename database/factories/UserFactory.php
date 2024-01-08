@@ -1,0 +1,45 @@
+<?php
+
+namespace Database\Factories;
+
+use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Factories\Factory;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
+
+class UserFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+            'email' => $this->faker->safeEmail, // password
+            'name' => $this->faker->name, // password
+            'password' => Hash::make("123456"), // password
+            'phone_number' => "1098559403",
+            'country_code' => "+20",
+            'sex' => "male",
+            'birthdate' => Carbon::create(1998 , 1,1),
+            'login_method' => "password",
+            'remember_token' => Str::random(10),
+        ];
+    }
+
+    /**
+     * Indicate that the model's email address should be unverified.
+     *
+     * @return \Illuminate\Database\Eloquent\Factories\Factory
+     */
+    public function unverified()
+    {
+        return $this->state(function (array $attributes) {
+            return [
+                'email_verified_at' => null,
+            ];
+        });
+    }
+}
