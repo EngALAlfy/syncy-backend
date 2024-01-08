@@ -40,6 +40,6 @@ This project is licensed under the [MIT License](LICENSE).
 
 ## Contact
 
-For inquiries, feel free to reach out to us at contact@syncyapp.com.
+For inquiries, feel free to reach out to us at islam@alalfy.com.
 
 Happy organizing with Syncy!
