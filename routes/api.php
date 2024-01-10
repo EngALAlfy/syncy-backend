@@ -19,3 +19,16 @@ Route::get("login/phone/verify-otp/{countryCode}/{phone}" , "App\Http\Controller
 
 Route::middleware(['auth:sanctum' , 'apiLocalization'])->group(function () {
 });
+
+
+Route::apiResource('aaccount', App\Http\Controllers\AaccountController::class);
+
+Route::apiResource('contact', App\Http\Controllers\ContactController::class);
+
+Route::apiResource('todo', App\Http\Controllers\TodoController::class);
+
+Route::apiResource('key', App\Http\Controllers\KeyController::class);
+
+Route::apiResource('visa', App\Http\Controllers\VisaController::class);
+
+Route::apiResource('category', App\Http\Controllers\CategoryController::class);
