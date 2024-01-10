@@ -16,14 +16,17 @@ trait JsonFuncsTrait {
     /**
      * Get a success response
      *
-     * @param null $data
+     * @param $data
      * @param string $message
      * @param array $meta
      *
      * @return JsonResponse
      */
-    protected function sendJsonSuccess($data = null , string $message = "Done successfully", array $meta = []): JsonResponse
+    protected function sendJsonSuccess($data = null , string $message = null, array $meta = []): JsonResponse
     {
+        if($message == null){
+            $message =  __("Done successfully");
+        }
         return response()->json(
             [
                 'success' => true,

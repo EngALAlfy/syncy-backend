@@ -1,4 +1,9 @@
 models:
+  User:
+    name: string:255
+    password: string:255
+    email: string:255 email
+    image: string:400 nullable
   Category:
     name: string:255
     image: string:400 nullable
@@ -32,7 +37,7 @@ models:
     image: string:400
     relationships:
       belongsTo: Category
-  Aaccount:
+  Account:
     name: string:255
     email: string:255 email nullable
     phone: string:12 nullable
@@ -45,7 +50,7 @@ models:
 
 
 controllers:
-  Aaccount:
+  Account:
     resource: api
   Contact:
     resource: api

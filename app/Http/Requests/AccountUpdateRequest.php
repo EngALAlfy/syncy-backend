@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AaccountStoreRequest extends FormRequest
+class AccountUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,7 +24,7 @@ class AaccountStoreRequest extends FormRequest
             'email' => ['nullable', 'email', 'max:255'],
             'phone' => ['nullable', 'string', 'max:12'],
             'password' => ['required', 'password', 'max:100'],
-            'login_url' => ['nullable', 'url' , 'string', 'max:500'],
+            'login_url' => ['nullable', 'string', 'max:500'],
             'image' => ['nullable', 'string', 'max:400'],
             'category_id' => ['required', 'integer', 'exists:categories,id'],
         ];
