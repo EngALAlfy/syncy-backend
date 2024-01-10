@@ -17,11 +17,5 @@ use Illuminate\Support\Facades\Route;
 Route::get("login/phone/request-otp/{countryCode}/{phone}" , "App\Http\Controllers\AuthController@apiLoginRequestOTP");
 Route::get("login/phone/verify-otp/{countryCode}/{phone}" , "App\Http\Controllers\AuthController@apiLoginVerifyOTP");
 
-Route::middleware('auth:sanctum')->group(function () {
-    Route::group([
-        'prefix' => LaravelLocalization::setLocale(),
-        'middleware' => ['localeSessionRedirect', 'localizationRedirect', 'localeViewPath']
-    ], function () {
-
-    });
+Route::middleware(['auth:sanctum' , 'apiLocalization'])->group(function () {
 });
