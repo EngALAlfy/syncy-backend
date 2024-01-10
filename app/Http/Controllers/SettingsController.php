@@ -9,11 +9,6 @@ use Spatie\Activitylog\Models\Activity;
 
 class SettingsController extends Controller
 {
-    function index()
-    {
-        return view("admin.settings.index");
-    }
-
     function clearCache()
     {
         $output = "";

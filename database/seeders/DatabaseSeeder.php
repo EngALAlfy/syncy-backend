@@ -23,11 +23,6 @@ class DatabaseSeeder extends Seeder
         DB::setEventDispatcher(new Dispatcher());
 
         $this->call(UserSeeder::class);
-        $this->call(PermissionsRoleSeeder::class);
-        $this->call(CategorySeeder::class);
-        $this->call(CountrySeeder::class);
-        $this->call(StateSeeder::class);
-        $this->call(PostSeeder::class);
 
     }
 }

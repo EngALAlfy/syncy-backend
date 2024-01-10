@@ -17,14 +17,9 @@ class UserFactory extends Factory
     public function definition()
     {
         return [
-            'email' => $this->faker->safeEmail, // password
-            'name' => $this->faker->name, // password
-            'password' => Hash::make("123456"), // password
-            'phone_number' => "1098559403",
-            'country_code' => "+20",
-            'sex' => "male",
-            'birthdate' => Carbon::create(1998 , 1,1),
-            'login_method' => "password",
+            'email' => $this->faker->safeEmail,
+            'name' => $this->faker->name,
+            'password' => Hash::make("123456"),
             'remember_token' => Str::random(10),
         ];
     }

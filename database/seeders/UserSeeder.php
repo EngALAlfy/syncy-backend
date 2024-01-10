@@ -21,8 +21,6 @@ class UserSeeder extends Seeder
         Schema::enableForeignKeyConstraints();
         // admin user
         User::factory()->create(['email' => 'admin@admin.com','name' => 'Super Admin']);
-        // demo user
-        User::factory()->create(['email' => 'demo@admin.com','name' => 'Demo']);
 
         User::factory(10)->create();
     }

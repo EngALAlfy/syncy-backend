@@ -54,13 +54,3 @@ if (!function_exists('getOnlyClassName')) {
 
     }
 }
-
-if (!function_exists('formatPhone')) {
-
-    function formatPhone($countryCode , $phoneNumber): string
-    {
-        $phoneNumber = \Illuminate\Support\Str::replaceStart("0" , "", $phoneNumber)  ;
-        return $countryCode . $phoneNumber;
-
-    }
-}
