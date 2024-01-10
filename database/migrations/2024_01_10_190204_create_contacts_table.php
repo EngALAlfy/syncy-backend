@@ -11,14 +11,19 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::disableForeignKeyConstraints();
+
+        Schema::create('contacts', function (Blueprint $table) {
             $table->id();
             $table->string('name', 255);
-            $table->string('password', 255);
-            $table->string('email', 255);
-            $table->string('image', 400)->nullable();
+            $table->string('email', 255)->nullable();
+            $table->string('phone', 12);
+            $table->string('image', 400);
+            $table->foreignId('category_id')->constrained()->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
+
+        Schema::enableForeignKeyConstraints();
     }
 
     /**
@@ -26,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('contacts');
     }
 };

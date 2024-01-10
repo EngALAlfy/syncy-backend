@@ -7,6 +7,7 @@
     "require": {
         "php": "^8.1",
         "ext-zip": "*",
+        "ejarnutowski/laravel-api-key": "^1.0",
         "guzzlehttp/guzzle": "^7.2",
         "laracasts/flash": "^3.2",
         "laravel/framework": "^10.10",
@@ -19,6 +20,7 @@
     },
     "require-dev": {
         "fakerphp/faker": "^1.9.1",
+        "jasonmccreary/laravel-test-assertions": "^2.3",
         "laravel-shift/blueprint": "^2.9",
         "laravel/pint": "^1.0",
         "laravel/sail": "^1.18",

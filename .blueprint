@@ -1,0 +1,45 @@
+created:
+    - app/Http/Controllers/AccountController.php
+    - app/Http/Controllers/ContactController.php
+    - app/Http/Controllers/TodoController.php
+    - app/Http/Controllers/KeyController.php
+    - app/Http/Controllers/VisaController.php
+    - app/Http/Controllers/CategoryController.php
+    - database/factories/UserFactory.php
+    - database/factories/CategoryFactory.php
+    - database/factories/VisaFactory.php
+    - database/factories/KeyFactory.php
+    - database/factories/TodoFactory.php
+    - database/factories/ContactFactory.php
+    - database/factories/AccountFactory.php
+    - app/Models/User.php
+    - app/Models/Category.php
+    - app/Models/Visa.php
+    - app/Models/Key.php
+    - app/Models/Todo.php
+    - app/Models/Contact.php
+    - app/Models/Account.php
+    - tests/Feature/Http/Controllers/AccountControllerTest.php
+    - tests/Feature/Http/Controllers/ContactControllerTest.php
+    - tests/Feature/Http/Controllers/TodoControllerTest.php
+    - tests/Feature/Http/Controllers/KeyControllerTest.php
+    - tests/Feature/Http/Controllers/VisaControllerTest.php
+    - tests/Feature/Http/Controllers/CategoryControllerTest.php
+updated:
+    - database/migrations\2014_10_12_000000_create_users_table.php
+    - database/migrations\2024_01_10_190200_create_categories_table.php
+    - database/migrations\2024_01_10_190201_create_visas_table.php
+    - database/migrations\2024_01_10_190202_create_keys_table.php
+    - database/migrations\2024_01_10_190203_create_todos_table.php
+    - database/migrations\2024_01_10_190204_create_contacts_table.php
+    - database/migrations\2024_01_10_202122_create_accounts_table.php
+    - routes/api.php
+models:
+    Category: { name: 'string:255', image: 'string:400 nullable', relationships: { hasMany: 'Visa,Key,Todo,Contact,Aaccount' } }
+    Visa: { name: 'string:255', number: 'string:16', expried_month: 'number:12', expried_year: 'number:2050', cvv: 'number:999 nullable', owner_name: 'string:255 nullable', relationships: { belongsTo: Category } }
+    Key: { name: 'string:255', value: longtext, image: 'string:400 nullable', relationships: { belongsTo: Category } }
+    Todo: { task: 'string:500', project_name: 'string:255', status: 'enum:pending,successful,failed default:pending', relationships: { belongsTo: Category } }
+    Contact: { name: 'string:255', email: 'string:255 email nullable', phone: 'string:12', image: 'string:400', relationships: { belongsTo: Category } }
+    Aaccount: { name: 'string:255', email: 'string:255 email nullable', phone: 'string:12 nullable', password: 'string:100', login_url: 'string:500 nullable', image: 'string:400 nullable', relationships: { belongsTo: Category } }
+    Account: { name: 'string:255', email: 'string:255 email nullable', phone: 'string:12 nullable', password: 'string:100', login_url: 'string:500 nullable', image: 'string:400 nullable', relationships: { belongsTo: Category } }
+    User: { name: 'string:255', password: 'string:255', email: 'string:255 email', image: 'string:400 nullable' }

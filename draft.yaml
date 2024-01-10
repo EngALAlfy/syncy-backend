@@ -1,5 +1,64 @@
 models:
-  Post:
-    title: string:400
-    content: longtext
-    published_at: nullable timestamp
+  User:
+    name: string:255
+    password: string:255
+    email: string:255 email
+    image: string:400 nullable
+  Category:
+    name: string:255
+    image: string:400 nullable
+    relationships:
+      hasMany: Visa,Key,Todo,Contact,Aaccount
+  Visa:
+    name: string:255
+    number: string:16
+    expried_month: number:12
+    expried_year: number:2050
+    cvv: number:999 nullable
+    owner_name: string:255 nullable
+    relationships:
+      belongsTo: Category
+  Key:
+    name: string:255
+    value: longtext
+    image: string:400 nullable
+    relationships:
+      belongsTo: Category
+  Todo:
+    task: string:500
+    project_name: string:255
+    status: enum:pending,successful,failed default:pending
+    relationships:
+      belongsTo: Category
+  Contact:
+    name: string:255
+    email: string:255 email nullable
+    phone: string:12
+    image: string:400
+    relationships:
+      belongsTo: Category
+  Account:
+    name: string:255
+    email: string:255 email nullable
+    phone: string:12 nullable
+    password: string:100
+    login_url: string:500 nullable
+    image: string:400 nullable
+    relationships:
+      belongsTo: Category
+
+
+
+controllers:
+  Account:
+    resource: api
+  Contact:
+    resource: api
+  Todo:
+    resource: api
+  Key:
+    resource: api
+  Visa:
+    resource: api
+  Category:
+    resource: api
